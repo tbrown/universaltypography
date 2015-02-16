@@ -1,0 +1,282 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* http://modularscale.com/scale/?px1=17.6&px2=&ra1=1.5&ra2=0 */
+@-ms-viewport { width: device-width; }
+@viewport { width: device-width; }
+html { font-size: 100%; }
+
+* { box-sizing: border-box; }
+
+
+/* Riverside
+================================*/
+
+
+/* Content
+--------------------------------*/
+body {
+  margin: 4vh 0;
+  font-family: "jaf-bernina-sans", Georgia, serif;
+}
+
+.context {
+  clear: both;
+}
+
+.container {
+  position: relative;
+  max-width: 600px;
+  max-height: 50vh; overflow: hidden;
+  margin: 0 0 1em 21vw;
+  border-left: 3px #000 solid;
+  border-right: 3px #000 solid;
+}
+
+.container p {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 2em;
+  font-family: Georgia, serif;
+  font-size: 1.1em;
+  line-height: 1.5;
+  border-left: 1px #999 dashed;
+  border-right: 1px #999 dashed;
+}
+
+.calculations {
+  margin: 0 0 3em 21vw;
+}
+.calculations span {
+  font-family: "source-code-pro", monospace;
+}
+
+.calculated-group {
+  position: relative;
+  border-bottom: 1px #ddd solid;
+}
+.calculated-group:after {
+  content: attr(title);
+  position: absolute;
+  top: 2em; left: 0;
+  font-family: "jaf-bernina-sans", sans-serif;
+  font-size: 0.9em;
+  color: #666;
+}
+.calculated-group[title="Font"] { margin-right: 1em; }
+.calculated-group[title="Size"],
+.calculated-group[title="Measure"],
+.calculated-group[title="Leading"] { color: cornflowerblue; }
+
+.width-contained {
+  visibility: hidden;
+  color: #c00;
+}
+
+
+/* Metrics data
+--------------------------------*/
+.metrics-data {
+  background-color: #eee;
+  border: 1px #ddd solid;
+  padding: 0.25em;
+  margin: 1em 0 0;
+}
+.metrics-data p {
+  margin: 0.5em;
+}
+
+
+/* Preferences
+--------------------------------
+.settings {
+  float: left;
+  width: 45%;
+}
+.prefs {
+  float: right;
+  width: 50%;
+  padding-left: 5%;
+  border-left: 1px #ccc solid;
+}*/
+.prefs { display: none; }
+
+
+
+/* Basic form stuff
+--------------------------------*/
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+label[for="font"] {
+  display: inline;
+}
+#instantiate-context {
+  display: block;
+  clear: both;
+}
+.tools li,
+.conditions li {
+  margin: 0 0 50px;
+}
+
+/* Sliders
+--------------------------------*/
+input[type="range"] {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 90);
+  width: 100%;
+  height: 20px;
+  border-bottom: 1px #ddd solid;
+  background: rgba(0,0,0,0);
+  outline: none; /* no focus outline */
+
+  cursor: pointer;
+  cursor: w-resize;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+input[type="range"]:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
+}
+input[type="range"]:focus {
+  outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  margin-bottom: -20px;
+  border: none;
+  border-radius: 4px;
+  background-image: linear-gradient(to right,
+    rgba(230,230,230,0.5) 0,
+    rgba(230,230,230,0.5) 46%,
+    rgba(0,0,0,1) 50%,
+    rgba(230,230,230,0.5) 54%,
+    rgba(230,230,230,0.5) 100%);
+}
+
+
+/* Recommendations
+--------------------------------*/
+.range {
+  display: block;
+  position: relative;
+  z-index: -2;
+  opacity: .5;
+  width: 50%;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: -30px;
+  background-color: #98df8a;
+}
+
+
+/* UI panels
+--------------------------------*/
+.tools, .conditions {
+  width: 20vw;
+  padding: 2em 1em 2.5em;
+  background-color: rgba(255,255,255,1);
+  font-size: 16px;
+}
+.tools {
+  position: fixed; top: 1vw; right: 1vw;
+  -webkit-box-shadow: 0 0.2em 1em 0 #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    0 0.2em 1em 0 #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         0 0.2em 1em 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.conditions {
+  float: left;
+  margin-left: 1vw;
+  margin-bottom: 2em;
+}
+
+
+/* About
+--------------------------------*/
+.about {
+  position: fixed;
+  bottom: 0; left: 0;
+  background: rgba(255,255,255,0.9);
+  padding: 1em 2em 1.5em;
+  color: #666;
+}
+
+
+/* Demos
+--------------------------------*/
+.demo2 .conditions,
+.demo2 #instantiate-context {
+  display: none;
+}
+.demo2 .container {
+  border-left: none;
+  border-right: none;
+  max-width: none;
+}
+.demo2 .container p {
+  margin: 0;
+}
+.demo1 .container {
+  max-height: auto;
+  overflow: visible;
+}
+.demo1 .calculations,
+.demo1 .range,
+.demo1 .metrics-data {
+  display: none;
+}

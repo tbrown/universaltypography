@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" id="html">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width">
+		<title>Universal Typography: Demo</title>
+		<script src="//use.typekit.net/oyf3lqb.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="scripts.js" defer></script>
+	</head>
+	<body>
+
+
+		<!-- Contexts -->
+		<div id="contexts">
+
+			<div class="context">
+				<div class="conditions">
+					<ul>
+						<li>
+							<label>User font-size: <span class="data">100%</span></label>
+							<input type="range" class="userfsize" min="10" max="22" step="2" />
+						</li>
+						<li>
+							<label>Container width: <span class="data">600px</span></label>
+							<input type="range" class="containerwidth" min="200" max="1000" step="1" />
+						</li>
+					</ul>
+				</div>
+				<div class="container" contenteditable="true">
+					<p>The web is universal and, in this talk, Tim Brown shows us how to practice typography in a way that is equally universal. Focusing on traditional typographic principles, while also embracing progressive enhancement, Tim explains how fonts, CSS, web-enabled devices, and user contexts coexist. Together, we will reevaluate what it means to successfully set type &#8212; and inform our routine decisions about typefaces, font sizes, and white space.</p>
+				</div>
+				<div class="calculations">
+					<p>
+						<span class="calculated-font calculated-group" title="Font">Georgia</span>
+						<span class="calculated-group" title="Size"><span class="calculated-size-rendered">1.1em</span> (<span class="calculated-size">1.1em</span> &times; <span class="calculated-size-root">100%</span>)</span> /
+						<span title="Leading" class="calculated-leading calculated-group">1.500</span> &times;
+						<span class="calculated-measure calculated-group" title="Measure">28em</span>
+						<span class="width-contained">(contained at <span class="calculated-width">22em</span>)</span>
+					</p>
+				</div>
+			</div>
+
+			<input type="button" id="instantiate-context" value="Instantiate context" />
+
+		</div>
+
+
+		<!-- Tools -->
+		<div class="tools">
+			<ul class="prefs">
+				<fieldset>
+					<legend>Font size settings:</legend>
+						<li>
+							<label for="allowance">Allowance</label>
+							<input type="range" id="allowance" min="-0.3" max="0.5" step="0.05" oninput="updateAllowance(value)"/>
+						</li>
+						<li>
+							<label for="skew">Skew</label>
+							<input type="range" id="skew" min="-1" max="1" step="0.05" oninput="updateSkew(value)"/>
+						</li>
+				</fieldset>
+				<fieldset>
+					<legend>Measure settings:</legend>
+				<li>
+					<label for="Mminadjust">Adjust Min</label>
+					<input type="range" id="Mminadjust" min="0.5" max="1.5" step="0.05" oninput="updateMminAdjust(value)"/>
+				</li>
+				<li>
+					<label for="Mmaxadjust">Adjust Max</label>
+					<input type="range" id="Mmaxadjust" min="0.5" max="1.5" step="0.05" oninput="updateMmaxAdjust(value)"/>
+				</li>
+				</fieldset>
+				<fieldset>
+					<legend>Line height settings:</legend>
+						<li>
+							<label for="Lminadjust">Adjust Min</label>
+							<input type="range" id="Lminadjust" min="0.9" max="1.1" step="0.001" oninput="updateLminAdjust(value)"/>
+						</li>
+						<li>
+							<label for="Lmaxadjust">Adjust Max</label>
+							<input type="range" id="Lmaxadjust" min="0.9" max="1.1" step="0.001" oninput="updateLmaxAdjust(value)"/>
+						</li>
+				</fieldset>
+			</ul>
+			<ul class="settings">
+				<li>
+					<label for="font">Font: </label>
+					<select id="font" onchange="updateFont(value)">
+						<option value="georgia">Georgia</option>
+						<option value="minion-pro">Minion</option>
+						<option value="ff-basic-gothic-web-pro">Basic Gothic</option>
+						<option value="ff-meta-web-pro">Meta</option>
+						<option value="myriad-pro">Myriad</option>
+						<option value="prenton">Prenton</option>
+						<option value="abril-text">Abril Text</option>
+					</select>
+					<div class="metrics-data">
+							<p>x-height: <span id="metrics-xheight">0.4625</span></p>
+							<p>avg width: <span id="metrics-avgwidth">0.502403846em</span></p>
+					</div>
+				</li>
+				<li>
+					<label for="fsize">font-size: <span class="data">1.1em</span></label>
+        	<span id="rec-size" class="range"></span>
+					<input type="range" id="fsize" min="0.2" max="2" step="0.01" />
+				</li>
+				<li>
+					<label for="fmeasure">max-width: <span class="data">∞</span></label>
+        	<span id="rec-measure" class="range"></span>
+					<input type="range" id="fmeasure" min="10" max="50" step="0.01" />
+				</li>
+				<li>
+					<label for="flineheight">line-height: <span class="data">1.5</span></label>
+        	<span id="rec-lineheight" class="range"></span>
+					<input type="range" id="flineheight" min="0.8" max="2.2" step="0.001" />
+				</li>
+				<li>
+					<label for="fmargins">L/R margin: <span class="data">2em</span></label>
+					<!--<span id="rec-margins" class="range"></span>-->
+					<input type="range" id="fmargins" min="0" max="8" step="0.01" />
+				</li>
+			</ul>
+		</div>
+
+		<div class="about">
+			<p>&copy; 2015 Tim Brown &nbsp;&middot;&nbsp;  <a href="http://twitter.com/nicewebtype">@nicewebtype</a> &nbsp;&middot;&nbsp; <a href="https://github.com/tbrown/universaltypography">GitHub</a></p>
+		</div>
+
+	</body>
+</html>
